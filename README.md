@@ -1,7 +1,6 @@
 # Parlare - Fluent Test DSL for Java
 
-[![Build Status](https://travis-ci.org/kpavlov/parlare.png?branch=master)](https://travis-ci.org/kpavlov/parlare) [![Build Status](https://drone.io/github.com/kpavlov/parlare/status.png)](https://drone.io/github.com/kpavlov/parlare/latest)
-
+[![Build Status](https://travis-ci.org/kpavlov/parlare.png?branch=master)](https://travis-ci.org/kpavlov/parlare) [![Build Status](https://drone.io/github.com/kpavlov/parlare/status.png)](https://drone.io/github.com/kpavlov/parlare/latest) [![Coverage Status](https://img.shields.io/codecov/c/github/kpavlov/parlare.svg)](https://codecov.io/github/kpavlov/parlare) [![MIT License](http://img.shields.io/badge/license-MIT-green.svg)](https://github.com/kpavlov/parlare/blob/master/LICENSE)
 
 How to write fluent tests:
 
