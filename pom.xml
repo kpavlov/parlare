@@ -8,7 +8,9 @@
     <artifactId>parlare</artifactId>
     <version>0.1.0-SNAPSHOT</version>
 
-    <name>Parlare - Fluent Test DSL for Java</name>
+    <name>Parlare</name>
+    <description>Fluent Java Test DSL</description>
+    <inceptionYear>2016</inceptionYear>
 
     <properties>
         <java.version>1.8</java.version>
