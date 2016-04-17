@@ -1,11 +1,5 @@
 package com.github.kpavlov.parlare;
 
-import org.hamcrest.Matcher;
-import org.hamcrest.MatcherAssert;
-
-import java.util.function.Function;
-import java.util.function.Predicate;
-
 public abstract class AbstractResult<T, S extends Workflow, SELF extends AbstractResult> implements Result<T, S, SELF> {
 
     private final T result;
@@ -56,36 +50,5 @@ public abstract class AbstractResult<T, S extends Workflow, SELF extends Abstrac
         return context;
     }
 
-
-    @SuppressWarnings("unchecked")
-    public SELF verify(Matcher<SELF> matcher) {
-        matcher.matches(result);
-        return (SELF) this;
-    }
-
-
-    @SuppressWarnings("unchecked")
-    public SELF verifyResult(String reason, Matcher<? super T> matcher) {
-        MatcherAssert.assertThat(reason, result, matcher);
-        return (SELF) this;
-    }
-
-    @SuppressWarnings("unchecked")
-    public SELF verifyResult(String reason, Function<T, Matcher<? super T>> f) {
-        MatcherAssert.assertThat(reason, result, f.apply(result));
-        return (SELF) this;
-    }
-
-    public SELF verifyResult(Function<T, Matcher<? super T>> f) {
-        return verifyResult("", f);
-    }
-
-    @SuppressWarnings("unchecked")
-    public SELF assertTrue(Predicate<T> resultPredicate) {
-        if (!resultPredicate.test(result)) {
-            throw new AssertionError("");
-        }
-        return (SELF) this;
-    }
 
 }

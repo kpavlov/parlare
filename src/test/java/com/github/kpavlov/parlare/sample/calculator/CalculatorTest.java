@@ -1,5 +1,6 @@
 package com.github.kpavlov.parlare.sample.calculator;
 
+import org.hamcrest.CoreMatchers;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -40,6 +41,7 @@ public class CalculatorTest {
     public void testFailDivideByZero() {
         workflow.divide(2, 0)
                 .execute()
-                .assertTrue(value -> value == Double.POSITIVE_INFINITY);
+                .assertTrue(value -> value == Double.POSITIVE_INFINITY)
+                .mapAndVerify(Double::isFinite, CoreMatchers.is(false));
     }
 }
