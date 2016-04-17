@@ -7,8 +7,8 @@ import static org.hamcrest.CoreMatchers.is;
 
 public class CalculatorTest {
 
-
     private final Calculator sut = new Calculator();
+
     CalculatorOperations workflow;
 
     @Before

@@ -6,19 +6,19 @@ import org.hamcrest.MatcherAssert;
 import java.util.function.Function;
 import java.util.function.Predicate;
 
-public abstract class ResultAdapter<T, S extends Workflow, SELF extends ResultAdapter> implements Result<T, S, SELF> {
+public abstract class AbstractResult<T, S extends Workflow, SELF extends AbstractResult> implements Result<T, S, SELF> {
 
     private final T result;
     private final S context;
     private final Throwable error;
 
-    protected ResultAdapter(T result, S context) {
+    protected AbstractResult(T result, S context) {
         this.result = result;
         this.error = null;
         this.context = context;
     }
 
-    protected ResultAdapter(Throwable error, S context) {
+    protected AbstractResult(Throwable error, S context) {
         this.error = error;
         this.result = null;
         this.context = context;
