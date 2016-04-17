@@ -1,5 +1,8 @@
 # Parlare - Fluent Test DSL for Java
 
+[![Build Status](https://travis-ci.org/kpavlov/parlare.png?branch=master)](https://travis-ci.org/kpavlov/parlare) [![Build Status](https://drone.io/github.com/kpavlov/parlare/status.png)](https://drone.io/github.com/kpavlov/parlare/latest)
+
+
 How to write fluent tests:
 
 1. Implement a class representing your `Workflow`:
