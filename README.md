@@ -1,6 +1,34 @@
-# Parlare - Fluent Test DSL for Java
+# Parlare - Fluent Java Test DSL
 
 [![Build Status](https://travis-ci.org/kpavlov/parlare.png?branch=master)](https://travis-ci.org/kpavlov/parlare) [![Build Status](https://drone.io/github.com/kpavlov/parlare/status.png)](https://drone.io/github.com/kpavlov/parlare/latest) [![Coverage Status](https://img.shields.io/codecov/c/github/kpavlov/parlare.svg)](https://codecov.io/github/kpavlov/parlare) [![MIT License](http://img.shields.io/badge/license-MIT-green.svg)](https://github.com/kpavlov/parlare/blob/master/LICENSE)
+
+**Parlare** -- From Vulgar Latin *paraulare* ‎(“to speak”), from Medieval Latin, Late Latin parabolare, from Latin parabola.
+
+## Overview
+
+*Parlare* is a small API destined to write concise and clear integration tests.
+ It uses [Hamcrest](http://hamcrest.org/JavaHamcrest) to make assertions easier. Please have a look at [Hamcrest extensions](https://github.com/hamcrest/JavaHamcrest/wiki/Related-Projects) to use proper matchers.
+
+API implements [Fluent Interface](https://en.wikipedia.org/wiki/Fluent_interface) pattern.
+
+*Workflow* is a sequence of *Operations*. Each Operation returns a *Result*.
+`Result` refers to `Workflow` using methods like `andThen() / andWhen()` and also provides some assertion methods like `verifyResult(Matcher)`.
+
+Workflow is good to represent user's session abstraction. Scenario may look like this:
+```java
+Session.of(login, password)
+    .login()
+        .execute()
+    .then()
+    .getProfile()
+        .execute()
+            .mapAndVerify(Profile::getName(), CoreMatchers.endsWith("Smith"))
+        .andThen()
+    .logout()
+        .execute();
+```
+
+## Recipe
 
 How to write fluent tests:
 
