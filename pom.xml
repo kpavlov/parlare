@@ -11,11 +11,29 @@
     <name>Parlare</name>
     <description>Fluent Java Test DSL</description>
     <inceptionYear>2016</inceptionYear>
+    <url>https://github.com/kpavlov/parlare</url>
+
+    <scm>
+        <url>https://github.com/kpavlov/fixio</url>
+        <connection>scm:git:git://github.com/kpavlov/parlare.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/kpavlov/parlare.git</developerConnection>
+        <tag>master</tag>
+    </scm>
+
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <distribution>repo</distribution>
+            <url>https://opensource.org/licenses/MIT</url>
+        </license>
+    </licenses>
 
     <properties>
         <java.version>1.8</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
+        <maven.compiler.optimize>true</maven.compiler.optimize>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
     <dependencies>
